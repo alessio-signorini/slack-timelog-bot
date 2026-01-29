@@ -1,0 +1,10 @@
+# frozen_string_literal: true
+
+# This file exists to make `bundle install` work correctly.
+# The actual Gemfile.lock will be generated when you run `bundle install`.
+
+# Note: Run `bundle install` after cloning to generate Gemfile.lock
+# Do not commit an empty Gemfile.lock
+
+# If you're seeing this placeholder, run:
+#   bundle install

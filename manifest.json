@@ -1,0 +1,58 @@
+{
+    "display_information": {
+        "name": "Timelog Bot",
+        "description": "Log your work hours naturally. Just tell the bot what you did, and it tracks time by project",
+        "background_color": "#2f5be0",
+        "long_description": "Timelog Bot makes time tracking effortless. Simply message the bot in natural language like \"I spent 3 hours doing data analysis for the Mushroom project\" and it automatically logs your time. No forms, no spreadsheets.\r\n\r\nFeatures:\r\n• Natural language time logging - just describe your work\r\n• Automatic project detection and classification\r\n• Personal time reports with /report command\r\n• Team reports for managers with /team_report\r\n• Works in direct messages or by @mentioning the bot\r\n• Supports retroactive logging (yesterday, last Monday, etc.)\r\n• Multi-user logging from a single message\r\n• Export reports as CSV files\r\n\r\nPerfect for teams that want simple time tracking without interrupting their workflow."
+    },
+    "features": {
+        "bot_user": {
+            "display_name": "Timelog Bot",
+            "always_online": false
+        },
+        "slash_commands": [
+            {
+                "command": "/report",
+                "url": "https://timelog-bot.signorini.dev/slack/commands",
+                "description": "Get your personal time report",
+                "should_escape": false
+            },
+            {
+                "command": "/team_report",
+                "url": "https://timelog-bot.signorini.dev/slack/commands",
+                "description": "Get team time report (admins only)",
+                "usage_hint": "[YYYY-MM]",
+                "should_escape": false
+            }
+        ]
+    },
+    "oauth_config": {
+        "scopes": {
+            "bot": [
+                "app_mentions:read",
+                "chat:write",
+                "commands",
+                "files:write",
+                "im:history",
+                "reactions:write",
+                "users:read"
+            ]
+        }
+    },
+    "settings": {
+        "event_subscriptions": {
+            "request_url": "https://timelog-bot.signorini.dev/slack/events",
+            "bot_events": [
+                "app_mention",
+                "message.im"
+            ]
+        },
+        "interactivity": {
+            "is_enabled": true,
+            "request_url": "https://timelog-bot.signorini.dev/slack/interactive"
+        },
+        "org_deploy_enabled": false,
+        "socket_mode_enabled": false,
+        "token_rotation_enabled": false
+    }
+}

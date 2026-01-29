@@ -1,0 +1,34 @@
+.git
+.gitignore
+.env
+.env.*
+README.md
+DEPLOYMENT.md
+Dockerfile
+fly.toml
+docker-compose.yml
+
+# Development files
+.devcontainer/
+tmp/
+log/
+data/
+
+# Test files
+test/
+spec/
+
+# Editor/IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Documentation
+docs/
+*.md
+!prompts/README.md

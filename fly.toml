@@ -1,0 +1,36 @@
+# fly.toml - Fly.io deployment configuration
+# See https://fly.io/docs/reference/configuration/
+
+app = "slack-timelog-bot"
+primary_region = "lax"
+
+[build]
+
+[env]
+  RACK_ENV = "production"
+  PORT = "8080"
+  LOG_LEVEL = "DEBUG"
+  LLM_MODEL = "anthropic/claude-haiku-4-5"
+  REPORT_ADMINS = "U09JSSAACB1,U625VLNKZ,U1SSDFH0U"  # Comma-separated Slack user IDs
+
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ["app"]
+
+  [http_service.concurrency]
+    type = "connections"
+    hard_limit = 25
+    soft_limit = 20
+
+[[vm]]
+  cpu_kind = "shared"
+  cpus = 1
+  memory_mb = 256
+
+[mounts]
+  source = "timelog_data"
+  destination = "/data"

@@ -1,0 +1,36 @@
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Database
+*.db
+*.db-shm
+*.db-wal
+/data/
+
+# Ruby
+/.bundle/
+/vendor/bundle/
+*.gem
+
+# Logs
+*.log
+/log/
+
+# IDE
+.idea/
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Test artifacts
+/coverage/
+/tmp/
+
+# ngrok
+ngrok.yml

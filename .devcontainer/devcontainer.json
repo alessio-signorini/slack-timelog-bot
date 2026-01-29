@@ -1,0 +1,32 @@
+{
+  "name": "Slack Timelog Bot",
+  "image": "mcr.microsoft.com/devcontainers/ruby:3.3",
+  "features": {
+    "ghcr.io/devcontainers/features/github-cli:1": {}
+  },
+  "forwardPorts": [
+    4567,
+    4040
+  ],
+  "postCreateCommand": "bash .devcontainer/postCreateCommand.sh",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "Shopify.ruby-lsp"
+      ],
+      "settings": {
+        "editor.formatOnSave": true,
+        "editor.tabSize": 2
+      }
+    }
+  },
+  "remoteEnv": {
+    "RACK_ENV": "development",
+    "FLYCTL_INSTALL": "/home/vscode/.fly",
+    "PATH": "${containerEnv:PATH}:/home/vscode/.fly/bin"
+  },
+  "mounts": [
+    "source=${localWorkspaceFolder}/data,target=/data,type=bind,consistency=cached",
+    "source=${localEnv:HOME}${localEnv:USERPROFILE}/.ssh,target=/home/vscode/.ssh/host,type=bind,consistency=cached,readonly"
+  ]
+}

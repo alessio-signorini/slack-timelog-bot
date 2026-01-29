@@ -1,0 +1,8 @@
+{
+  "chat.tools.terminal.autoApprove": {
+    "/^rake test$/": {
+      "approve": true,
+      "matchCommandLine": true
+    }
+  }
+}

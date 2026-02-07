@@ -1,4 +1,4 @@
-# Slack Timelog Bot
+# 🤖 Timelog Bot
 
 A simple Slack bot that helps teams track time spent on projects using natural language.
 
